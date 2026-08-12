@@ -1,5 +1,29 @@
 import os
 
+class Pessoa:
+    def __init__(self, nome, idade, email):
+        self.nome = nome
+        self.idade = idade
+        self.email = email
+    
+    def exibir_info(self):
+        print(f"Nome: {self.nome} | Idade: {self.idade} | Email: {self.email}")
+
+class Medico(Pessoa):
+    def __init__(self, nome, idade, email, especialidade):
+        super(). __init__(nome, idade, email)
+        self.especialidade = especialidade
+
+class Paciente(Pessoa):
+    def __init__(self, nome, idade, email, historico):
+        super(). __init__(nome, idade, email)
+        self.historico = historico
+    
+    def marcar_consulta():
+        data = input("Defina a data (dd/mm/aa): ")
+
+
+
 class Consulta:
     def __init__(self, data, paciente, medico):
         self.data = data
@@ -49,23 +73,31 @@ while True:
     # Cadastrar Médico
     if opcao == "1":
         ####### CRIE O CÓDIGO PARA CADASTRAR MÉDICO
-        print("Médico cadastrado com sucesso!\n")
+        nome = input("Nome: ")
+        idade = input("Idade: ")
+        email = input("Email: ")
+        especialidade = input("Especialidade: ")
+        print("\nMédico cadastrado com sucesso!\n")
 
     # Cadastrar Paciente
     elif opcao == "2":
         ####### CRIE O CÓDICO PARA CADASTRAR PACIENTE
-        print("Paciente cadastrado com sucesso!\n")
+        nome = input("Nome: ")
+        idade = input("Idade: ")
+        email = input("Email: ")
+        historico = input("Historico: ")
+        print("\nPaciente cadastrado com sucesso!\n")
 
     # Listar Médicos
     elif opcao == "3":
         for i, m in enumerate(medicos):
             print(f"{i} - {m.exibir_info()} | Esp: {m.especialidade}")
-        print()
+            print(f"{m.exibir_info}")
 
     # Listar Pacientes
     elif opcao == "4":
         ####### CRIE O CÓDIGO PARA LISTAR PACIENTES
-        print()
+        paciente.exibir_info()
 
     # Marcar Consulta
     elif opcao == "5":
